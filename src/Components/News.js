@@ -273,13 +273,13 @@ export class News extends Component {
     console.log("Hello I am a constructor from News Component");
   }
   render() {
-    if (!this.props.data.articles) {
-      return <div>Loading...</div>;
-    }
+    if (!this.props.articles) {
+        return <div>Loading...</div>;
+      }
     return (
       < div className="container my-3">
       <h2>Daily Top Headlines</h2>
-      <div className="row">
+        <div className="row">
       {this.state.articles.map((element)=>{
         return  <div className="col-md-4" key={element.url}>
         <NewsItem title={element.title} description={element.description} imagUrl={element.urlToImage} newsUrl={element.newsUrl}/>
@@ -287,7 +287,7 @@ export class News extends Component {
       }
       )}
       </div>
-      </div>
+        </div>
     )
   }
 }
